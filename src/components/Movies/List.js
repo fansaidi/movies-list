@@ -21,6 +21,14 @@ export default class MoviesList extends Component {
     }
 
     async loadData(page) {
+        if (this.state.isLoading) return;
+
+        this.setState((state) => {
+            return {
+                isLoading: true,
+            };
+        });
+
         try {
             let response = await fetch('https://cdn-discover.hooq.tv/v1.2/discover/feed?region=ID&page=' + page + '&perPage=20');
             let result = await response.json();
@@ -37,6 +45,7 @@ export default class MoviesList extends Component {
                     movies: [...state.movies, ...movies],
                     totalPages: result.pagination.totalPages,
                     page: page,
+                    isLoading: false,
                 };
             });
         } catch (error) {

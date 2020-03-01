@@ -9,7 +9,7 @@ export default class MovieAttributes extends Component {
         for (var i in attr)
             attributes[i] = attr[i];
 
-        return ((attr.length > 0) &&
+        return ((attr != null && attr.length > 0) &&
             <>
                 <h4>{this.props.label ? this.props.label + " :" : ''}</h4>
                 <div className="attributes-container">

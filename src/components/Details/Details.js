@@ -55,9 +55,9 @@ export default class Details extends Component {
                         <div className="details-header">
                             <span className="title">{data.title}</span>
                             <div className="details-meta">
+                                <span>{data.as}</span>
                                 <span>{data.meta.ageRating}</span>
                                 <span>{data.meta.releaseYear}</span>
-                                <span>{data.running_time_friendly}</span>
                             </div>
                         </div>
                         <div className="details-body">
@@ -68,6 +68,7 @@ export default class Details extends Component {
                                 <span>{data.description}</span>
                                 <MovieAttributes label="Languages" attributes={data.languages} />
                                 <MovieAttributes label="Audios" attributes={data.audios} />
+                                <MovieAttributes label="Seasons" attributes={data.seasons} />
                             </div>
 
                         </div>
