@@ -19,8 +19,6 @@ export default class Details extends Component {
             let { params } = this.props.match;
             let response = await fetch('https://cdn-discover.hooq.tv/v1.2/discover/titles/' + params.id);
             let result = await response.json();
-
-            console.log(result);
             let images = {};
 
             result.data.images.forEach((image) => {
